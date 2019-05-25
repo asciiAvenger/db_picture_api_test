@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Picture db api test</title>
 
+    <!-- linking materializecss -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
 
     <?php
+        // importing the insert-"module" and the api config file
         require_once './api/insert.php';
         require_once './api/api.config.php';
 
+        // checking if an image has been submitted and inserting it into the database
         if (isset($_POST['submit-button']) and isset($_POST['name']) and isset($_FILES['image'])) {
             $name = $_POST['name'];
             $type = $_FILES['image']['type'];
@@ -22,6 +25,7 @@
         }
     ?>
 
+    <!-- form for uploading images, styled using https://materializecss.com -->
     <section class="section">
         <div class="container">
             <h1>db_picture_test_api</h1>
@@ -44,8 +48,7 @@
         </div>
     </section>
 
-    <!-- display all images -->
-
+    <!-- displaying all images using Material-Box -->
     <section class="section">
         <div class="container">
             <div class="row">
@@ -64,7 +67,10 @@
         </div>
     </section>
     
+    <!-- Adding materializecss's javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- initializing the Material-Box module -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const images = document.querySelectorAll('.materialboxed');
