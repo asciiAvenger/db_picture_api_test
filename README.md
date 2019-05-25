@@ -1,2 +1,20 @@
 # db_picture_api_test
-Sample code for storing and loading pictures in/from a MySQL Database.
+
+PHP sample code for storing and loading pictures in/from a MySQL database.
+
+The MySQL database is created as follows (or in the `create_db_script.sql`):
+
+```mysql
+create database picture_db;
+
+use picture_db;
+
+create table images (
+    image_id int unsigned primary key auto_increment,
+    image_name varchar(100) not null,
+    image_type varchar(255) not null,
+    image_data mediumblob not null
+);
+```
+
+I hope this helps and thanks for visiting my repository! :)
